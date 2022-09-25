@@ -39,9 +39,14 @@ def add_contact():
         flash('EL Contacto se ha registrado satisfactoriamente')
         return redirect(url_for('Index'))
 
-@app.route('/edit')
-def edit_contact():
-    return 'Editar Contacto'
+@app.route('/edit/<id>', methods=['POST', 'GET'])
+def edit_contact(id):
+    contact = mysql.connection.cursor()
+    contact.execute('SELECT * FROM contacts WHERE id = %s', (id))
+    data = contact.fetchall()
+    contact.close()
+    return render_template('edit.html', contact=data[0])
+
 
 @app.route('/delete/<string:id>', methods=['POST', 'GET'])
 def delete_contact(id):
