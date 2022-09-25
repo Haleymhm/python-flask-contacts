@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>PYTHON FLASK CRUD  -  Haleym Hidalgo</title>
+    <!-- BOOSTRAP 4 -->
+    <link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap-Sandstone.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}">
+  </head>
+  <body>
+
+    <!-- NAVIGATION  -->
+    <nav class="navbar navbar-dark bg-primary">
+      <div class="container">
+        <a class="navbar-brand" href="/">Flask Contacts App</a>
+      </div>
+    </nav>
+
+    <div class="container pt-4">
+      {% block body %}
+      {% endblock %}
+    </div>
+
+    <!-- footer -->
+    <!-- scripts -->
+    
+    <script src="{{url_for('static', filename='js/jquery-3.3.1.slim.min.js')}}"></script>
+    <script src="{{url_for('static', filename='js/popper.min.js')}}"></script>
+    <script src="{{url_for('static', filename='js/bootstrap.min.js')}}"></script>
+    <script src="{{url_for('static', filename='js/main.js')}}"></script>
+  </body>
+</html>
